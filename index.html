@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justificación de Inasistencias</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555; }
+        input, select { 
+            width: 100%; 
+            padding: 0.5rem; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:disabled { background-color: #66b3ff; cursor: not-allowed; }
+        .status { margin-top: 1rem; text-align: center; font-weight: bold; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Registro de Inasistencia</h2>
+        
+        <!-- Este es el formulario. Los atributos 'name' son los que viajan a n8n -->
+        <form id="inasistenciaForm">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="correo">Correo Institucional</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telegram_id">ID de Telegram</label>
+                <input type="number" id="telegram_id" name="telegram_id" required>
+            </div>
+
+            <div class="form-group">
+                <label for="motivo">Motivo Principal</label>
+                <select id="motivo" name="motivo" required>
+                    <option value="">Seleccione un motivo...</option>
+                    <option value="Salud/Enfermedad">Salud / Enfermedad</option>
+                    <option value="Calamidad Doméstica">Calamidad Doméstica</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="archivo">Documento de Soporte (Imagen o PDF)</label>
+                <input type="file" id="archivo" name="archivo" accept="image/*,.pdf" required>
+            </div>
+
+            <button type="submit" id="submitBtn">Enviar Justificación</button>
+            <div id="statusMessage" class="status"></div>
+        </form>
+    </div>
+
+    <!-- Importamos la lógica principal -->
+    <script type="module" src="./app.js"></script>
+
+</body>
+</html>
