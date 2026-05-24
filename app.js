@@ -2,7 +2,7 @@
 // 1. Importamos la función de conexión
 import { enviarAWebhook } from './webhook.js';
 
-const N8N_WEBHOOK_URL = 'https://ccarolinaa.app.n8n.cloud/webhook-test/18f5f711-0868-48af-903f-b65f83df3c25'; 
+const N8N_WEBHOOK_URL = 'https://ccarolinaarce.app.n8n.cloud/webhook-test/inasistencias'; 
 
 // 3. Seleccionamos los elementos del HTML
 const form = document.getElementById('inasistenciaForm');
