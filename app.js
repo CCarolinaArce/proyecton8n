@@ -2,7 +2,7 @@
 // 1. Importamos la función de conexión
 import { enviarAWebhook } from './webhook.js';
 
-const N8N_WEBHOOK_URL = 'https://ccarolinaarce.app.n8n.cloud/webhook-test/inasistencias'; 
+const N8N_WEBHOOK_URL = 'http://localhost:5678/webhook-test/recepcion-justificadores'; 
 
 // 3. Seleccionamos los elementos del HTML
 const form = document.getElementById('inasistenciaForm');
